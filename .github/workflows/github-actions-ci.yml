@@ -38,7 +38,7 @@ jobs:
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
     - name: Change directory to Terraform folder 
-      run: cd terraform
+      run: cd terraform
 
     - name: Terraform Init
       run: terraform init
