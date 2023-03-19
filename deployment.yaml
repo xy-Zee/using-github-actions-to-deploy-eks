@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zeemacluster
+  labels:
+    app: zeemacluster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zeemacluster
+  template:
+    metadata:
+      labels:
+        app: zeemacluster
+    spec:
+      containers:
+        - name: zeemacluster
+          image: 674416511128.dkr.ecr.us-east-2.amazonaws.com/k8sproject:1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

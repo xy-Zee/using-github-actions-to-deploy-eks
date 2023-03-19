@@ -1,0 +1,65 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1ETXhPVEUwTXpVek4xb1hEVE16TURNeE5qRTBNelV6TjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUE00CjB6T2gzaE9kUVFhUkF2M2hrRFJHb3NKQ0xIN0pSKzdiWXN2VVBCOUl6S21vUFIvTVhLODlCRGJSUDJYQkR0cHAKUHpuUEVYUk1sNHVpWG1xenIraXo4TnY0OFY5Ylh3Wi9mbnVqY0ROeXgvN1QzamJFOG1HeFpiQkk4bXIxTDdpcQpVeGVtZ3BwNnF5YVZybktSQy9INHlXdUVlbDVjUWxvR1oyTGVEL3JmYVBWRWc2cndVOWZEeEt4ejEwSFNDb05KCmlUanFJRWpxZWhXQWlJbEZIelBQOFg1WG93eStpd1Iwc242VkZMSzBqdDFwRjROQjVubXZXVWwreEZRbVVURFoKdFRoV0FxdTN2NjVDNUhlUHJEaDFxcEtSVTloOTk5WXQyem1WcUJsdEpGYmxqSDFPbW9NelM0Q0FmWGY1T1dQVQpsdjNScFhNM1c0NnNFSlc4Q0ZjQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZQVGZDaXJaaUVTNUJQaVZ2Y3V6L09XZTlneXdNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBSnJKOWhMQm5UTnlIT3BBY3JHNQoxa0JKSlhoQ2VWcFFNdlI3RGdjeFJaOTdGSExSeW5SdWN5SkZScUdYVC9jZWtKQnlKWmpjRFJWRVU0M3IvWFlyCm9STFVVWXBHU01aLzA2amdJTzNNRzFtd3RrNE5CMXF0VTBBL1ViL1ZUV3MyZkRTWFNPMG5YMWFmbjFHVVRIc2wKcGF1NmtmTEtnNjJ4SlRIVVBiMU4xeHJWZEVtME1xUmZkTkJMc3kzNXBWZkpMbWpNdUtHWU9nWm5RMUkwRW53OApGUXZjOWl2dWdKL2NjQUZWeFNBZ2VuaGsyK0NHdjQxV3gyendzOGJGYTdxRjNVSk9tbWk0V2J6eUgxZ1ZDQmtCCnZPTFhISGxXWjRCL2VleFcwUTQ4WU9pYjJCTDYycWJpWTZhS3FMR1dZaS9JQk9RT0xYUVlwSFFtT01xVXNOdW8KU09NPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://3F99FDA0F0A1BA05FBA97850F2A20A5C.gr7.us-east-2.eks.amazonaws.com
+  name: zeemacluster.us-east-2.eksctl.io
+contexts:
+- context:
+    cluster: zeemacluster.us-east-2.eksctl.io
+    user: Administrator@zeemacluster.us-east-2.eksctl.io
+  name: Administrator@zeemacluster.us-east-2.eksctl.io
+current-context: Administrator@zeemacluster.us-east-2.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: Administrator@zeemacluster.us-east-2.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - eks
+      - get-token
+      - --cluster-name
+      - zeemacluster
+      - --region
+      - us-east-2
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
+      provideClusterInfo: false
+
+USER@xyZee MINGW64 ~/.kube
+$ cat config
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1ETXhPVEUwTXpVek4xb1hEVE16TURNeE5qRTBNelV6TjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUE00CjB6T2gzaE9kUVFhUkF2M2hrRFJHb3NKQ0xIN0pSKzdiWXN2VVBCOUl6S21vUFIvTVhLODlCRGJSUDJYQkR0cHAKUHpuUEVYUk1sNHVpWG1xenIraXo4TnY0OFY5Ylh3Wi9mbnVqY0ROeXgvN1QzamJFOG1HeFpiQkk4bXIxTDdpcQpVeGVtZ3BwNnF5YVZybktSQy9INHlXdUVlbDVjUWxvR1oyTGVEL3JmYVBWRWc2cndVOWZEeEt4ejEwSFNDb05KCmlUanFJRWpxZWhXQWlJbEZIelBQOFg1WG93eStpd1Iwc242VkZMSzBqdDFwRjROQjVubXZXVWwreEZRbVVURFoKdFRoV0FxdTN2NjVDNUhlUHJEaDFxcEtSVTloOTk5WXQyem1WcUJsdEpGYmxqSDFPbW9NelM0Q0FmWGY1T1dQVQpsdjNScFhNM1c0NnNFSlc4Q0ZjQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZQVGZDaXJaaUVTNUJQaVZ2Y3V6L09XZTlneXdNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBSnJKOWhMQm5UTnlIT3BBY3JHNQoxa0JKSlhoQ2VWcFFNdlI3RGdjeFJaOTdGSExSeW5SdWN5SkZScUdYVC9jZWtKQnlKWmpjRFJWRVU0M3IvWFlyCm9STFVVWXBHU01aLzA2amdJTzNNRzFtd3RrNE5CMXF0VTBBL1ViL1ZUV3MyZkRTWFNPMG5YMWFmbjFHVVRIc2wKcGF1NmtmTEtnNjJ4SlRIVVBiMU4xeHJWZEVtME1xUmZkTkJMc3kzNXBWZkpMbWpNdUtHWU9nWm5RMUkwRW53OApGUXZjOWl2dWdKL2NjQUZWeFNBZ2VuaGsyK0NHdjQxV3gyendzOGJGYTdxRjNVSk9tbWk0V2J6eUgxZ1ZDQmtCCnZPTFhISGxXWjRCL2VleFcwUTQ4WU9pYjJCTDYycWJpWTZhS3FMR1dZaS9JQk9RT0xYUVlwSFFtT01xVXNOdW8KU09NPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://3F99FDA0F0A1BA05FBA97850F2A20A5C.gr7.us-east-2.eks.amazonaws.com
+  name: zeemacluster.us-east-2.eksctl.io
+contexts:
+- context:
+    cluster: zeemacluster.us-east-2.eksctl.io
+    user: Administrator@zeemacluster.us-east-2.eksctl.io
+  name: Administrator@zeemacluster.us-east-2.eksctl.io
+current-context: Administrator@zeemacluster.us-east-2.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: Administrator@zeemacluster.us-east-2.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - eks
+      - get-token
+      - --cluster-name
+      - zeemacluster
+      - --region
+      - us-east-2
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
+      provideClusterInfo: false
