@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    working-directory: /usr/src/app
+    working-directory: $DIR_OF_CHOICE
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
