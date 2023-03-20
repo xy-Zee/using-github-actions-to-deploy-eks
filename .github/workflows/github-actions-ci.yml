@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  deploy:
+  install_dependecies:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -37,15 +37,15 @@ jobs:
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
         
+  apply_terraform:
+   runs-on: ubuntu-latest
+   steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Change directory to terraform folder
-      run: cd terraform 
-
     - name: Terraform Init
       run: terraform init
-      working directory: /.terraform
+      working-directory: ./terraform
     
     - name: Terraform Validate
       run: terraform validate
@@ -55,16 +55,15 @@ jobs:
       if: github.event_name == 'pull_request'
       run: terraform plan -no-color -input=false
       
-
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
-      
+  
+  deploy_manifest:
+   runs-on: ubuntu-latest
+   steps:
     - name: Checkout code
-      uses: actions/checkout@v2
-    
-    - name: Change directory to terraform folder
-      run: cd terraform
+      uses: actions/checkout@v2    
 
     - name: Install kubectl
       uses: azure/setup-kubectl@v2.0
@@ -79,4 +78,3 @@ jobs:
       run: |
         kubectl apply -f deployment.yaml
         kubectl apply -f service.yaml
-      
