@@ -8,11 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-<<<<<<< HEAD
     run:
         working-directory: ./terraform
-=======
->>>>>>> 1d3b1539a9e8a76b83843c10f03767509629535c
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
