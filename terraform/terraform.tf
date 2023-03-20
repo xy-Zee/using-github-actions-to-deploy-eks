@@ -8,6 +8,14 @@ terraform {
       version = "~> 4.47.0"
     }
 
+  cloud {
+    organization = "harobed"
+
+    workspaces {
+      name = "cicd"
+    }
+  }
+
     random = {
       source  = "hashicorp/random"
       version = "~> 3.4.3"
