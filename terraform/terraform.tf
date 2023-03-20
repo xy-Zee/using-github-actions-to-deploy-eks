@@ -8,13 +8,6 @@ terraform {
       version = "~> 4.47.0"
     }
 
-  cloud {
-    organization = "harobed"
-
-    workspaces {
-      name = "cicd"
-    }
-  }
 
     random = {
       source  = "hashicorp/random"
@@ -33,4 +26,18 @@ terraform {
   }
 
   required_version = "~> 1.3"
+}
+
+provider "aws" {
+  region = var.region
+}
+
+terraform {
+  cloud {
+    organization = "harobed"
+
+    workspaces {
+      name = "cicd"
+    }
+  }
 }
