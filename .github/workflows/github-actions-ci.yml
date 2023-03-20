@@ -61,8 +61,9 @@ jobs:
       
     - name: Checkout code
       uses: actions/checkout@v2
-
-      
+    
+    - name: Change directory to terraform folder
+      run: cd terraform
 
     - name: Install kubectl
       uses: azure/setup-kubectl@v2.0
