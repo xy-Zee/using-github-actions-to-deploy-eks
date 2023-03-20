@@ -34,10 +34,10 @@ provider "aws" {
 
 terraform {
   cloud {
-    organization = "harobed"
+    organization = "xy_Zee"
 
     workspaces {
-      name = "cicd"
+      name = "zeema"
     }
   }
 }
